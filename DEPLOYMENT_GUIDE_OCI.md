@@ -2,6 +2,13 @@
 
 이 문서는 **Ubuntu 22.04 (또는 20.04)** 기반의 Oracle Cloud Always Free 인스턴스에 Node.js Socket.io 서버를 배포하고, **HTTPS(SSL)**까지 적용하는 전체 과정을 설명합니다.
 
+## 📌 현재 서버 접속 정보 (Summary)
+- **Public IP**: `140.245.69.42`
+- **Port**: `5050`
+- **Socket 주소**: `http://140.245.69.42:5050` (현재 HTTP 상태)
+- **SSH 접속**: `ssh -i ~/.ssh/oracle_key.key ubuntu@140.245.69.42`
+- **GitHub**: `https://github.com/azerckid/metaverse-server.git`
+
 ---
 
 ## ✅ 사전 준비 (Prerequisites)
@@ -18,8 +25,8 @@
 터미널에서 SSH 키를 이용해 서버에 접속합니다.
 
 ```bash
-# 로컬 터미널
-ssh -i "경로/to/your/private_key.key" ubuntu@<서버_공인_IP>
+# 로컬 터미널 (SSH 접속)
+ssh -i ~/.ssh/oracle_key.key ubuntu@140.245.69.42
 ```
 
 접속 후, 패키지 리스트를 업데이트하고 필수 도구를 설치합니다.
@@ -56,9 +63,8 @@ npm -v
 
 ### 1. 깃허브에서 코드 클론
 ```bash
-# 깃 레포지토리 주소는 본인의 것으로 변경하세요
-git clone https://github.com/사용자명/레포지토리이름.git
-cd 레포지토리이름/mogame2_server
+git clone https://github.com/azerckid/metaverse-server.git
+cd metaverse-server
 ```
 
 ### 2. 의존성 설치 및 빌드
