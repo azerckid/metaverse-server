@@ -95,6 +95,6 @@ io.on("connection", (socket) => {
 
 const PORT = process.env.PORT || 5050;
 
-server.listen(PORT, () => {
+server.listen(Number(PORT), "0.0.0.0", () => {
     console.log(`Game Server running on port ${PORT}`);
 });
